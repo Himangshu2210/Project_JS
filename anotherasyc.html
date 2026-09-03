@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>My Life is Beautiful</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayDate = (str) => {
+      console.log(str, "lucas", Date.now());
+    };
+    document.querySelector("#start").addEventListener("click", () => {
+      const setInt = setInterval(sayDate, 1000);
+      console.log("I");
+      const clearInt = () => {
+        clearInterval(setInt);
+      };
+      document.querySelector("#stop").addEventListener("click", clearInt);
+    });
+  </script>
+</html>
